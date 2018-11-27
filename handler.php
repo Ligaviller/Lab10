@@ -3,33 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Addition</title>
-    <style>
-    *{
-      font-family: 'Open Sans', sans-serif;
-    }
-    li{
-      margin:5px 0;
-    }
-    a{
-      color:#666;
-      text-decoration: none;
-    }
-    a:hover{
-      color: black;
-      background-color: #e6e6e6;
-      transition: background-color 0.2s;
-    }
-.error {color: red; font-size: 1.2em;}
-}
-table {
-  width: 400px; border: 1px solid #ccc; border-collapse: collapse;
-  margin: 10px;}
-  td, th {padding: 5px; border: 1px solid #ccc;}
-  th {font-weight: bold; background: #e3edf7}
-  label {display: block; width: 300px; margin: 5px 0
-  }
-
-    </style>
   </head>
   <body>
 <?php
