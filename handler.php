@@ -31,7 +31,7 @@ Elseif (isset($_POST['search'])) {
     $name = $_POST['Name'];
     $last_Name = $_POST['Last_Name'];
     $func = $_POST['Function'];
-    $stmt = $db->prepare('SELECT * FROM Workers Where (Name = :name OR Last_name = :last_Name OR Function = :func)');
+    $stmt = $db->prepare('SELECT * FROM Workers Where (Name = :name AND Last_name = :last_Name AND Function = :func)');
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':last_Name', $last_Name);
     $stmt->bindParam(':func', $func);
