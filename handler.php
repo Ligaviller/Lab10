@@ -79,25 +79,24 @@ Elseif (isset($_POST['search'])) {
 
 
 else{
-
-if (isset($_POST['Name'])){
-require 'db.php';
-$name = $_POST['Name'];
-$last_Name = $_POST['Last_Name'];
-$func = $_POST['Function'];
-$stmt = $db->prepare('INSERT INTO Workers (Name, Last_Name, Function) VALUES
-(:name, :last_Name, :func)');
-$stmt->bindParam(':name', $name);
-$stmt->bindParam(':last_Name', $last_Name);
-$stmt->bindParam(':func', $func);
-if ($stmt->execute()) {echo "Данные успешно сохранены.";}
-else {
- echo "Ошибка сохранения данных: "; print_r($stmt->errorInfo());
-}
-}
- else { echo "<p class=\"error\">Данных нет. Сначала откройте форму.</p>"; }
-//isset
-}
+    if (isset($_POST['Name'])){ //добавление записи в бд
+    require 'db.php';
+    $name = $_POST['Name'];
+    $last_Name = $_POST['Last_Name'];
+    $func = $_POST['Function'];
+    $stmt = $db->prepare('INSERT INTO Workers (Name, Last_Name, Function) VALUES 
+    (:name, :last_Name, :func)');
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':last_Name', $last_Name);
+    $stmt->bindParam(':func', $func);
+    if ($stmt->execute()) {echo "Данные успешно сохранены.";}
+    else {
+     echo "Ошибка сохранения данных: "; print_r($stmt->errorInfo());
+    }
+    }
+     else { echo "<p class=\"error\">Данных нет. Сначала откройте форму.</p>"; }
+    //isset
+    }
 ?>
 </body>
 </html>
