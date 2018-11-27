@@ -8,10 +8,9 @@
   <body>
     <h1><a href="db.php">База данных</a></h1>
   <?php
-$script_name = $_SERVER['PHP_SELF'];
-require_once 'db.php';
-$workers = $db->query("SELECT * FROM Workers ORDER BY id")->fetchAll();
-
+$script_name = $_SERVER['PHP_SELF'];//попытка реализовать объектный подход к подключению обработчиков
+require_once 'db.php';//файл подключения к бд
+$workers = $db->query("SELECT * FROM Workers ORDER BY id")->fetchAll();//потом реализовать выбор из выпадающего списка
 ?>
 
 <ul>
